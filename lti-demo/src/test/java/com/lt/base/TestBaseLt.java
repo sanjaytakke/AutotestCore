@@ -27,7 +27,6 @@ import org.slf4j.LoggerFactory;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.google.inject.PrivateBinder;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
