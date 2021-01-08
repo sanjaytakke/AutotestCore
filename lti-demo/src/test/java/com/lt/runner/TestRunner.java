@@ -6,9 +6,9 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/Features", glue = { "com.lt.tests", "com.lt.utilities" }, plugin = {
+@CucumberOptions(features = "src/test/resources/features", glue = { "com.lt.tests", "com.lt.utilities" }, plugin = {
 		"pretty", "html:target/report.html", "json:target/cucumber.json",
-		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, tags = "@ETE_1")
+		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, tags = "@ETE_1", dryRun = false)
 // )
 public class TestRunner {
 

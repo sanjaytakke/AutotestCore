@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import com.lt.autotest.handlers.AssertHandler;
 import com.lt.autotest.utils.Config;
 import com.lt.base.TestBase;
-import com.lt.base.TestBaseLt;
 import com.lt.containers.AccountPageContainer;
 
 import io.cucumber.datatable.DataTable;

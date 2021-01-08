@@ -53,9 +53,7 @@ public class TestBase extends DriverManager {
 		options.addArguments("--ignore-certificate-errors");
 		options.addArguments("test-type");
 		options.addArguments("disable-infobars");
-
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-
 		capabilities.setCapability("chromeOptions", options);
 		capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 
@@ -67,10 +65,9 @@ public class TestBase extends DriverManager {
 
 		WebDriver driver = null;
 		try {
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
+			driver = new ChromeDriver(options);
 		} catch (Exception e) {
-			System.out.println(e);
+			LOGGER.error(e.toString());
 		}
 
 		return driver;
