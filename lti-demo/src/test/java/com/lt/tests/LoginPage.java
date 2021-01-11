@@ -29,19 +29,8 @@ public class LoginPage extends TestBase {
 
 	@Given("^User is on home page$")
 	public void user_is_on_Home_Page() {
-		String url = "";
-		try {
-			url = Config.getPropertyValue("application.url");
-			if (null != url) {
-				LOGGER.info("URL : " + url);
-				driver.get(url);
-			} else {
-				LOGGER.error("application url not found. Reverting to default url: " + Constants.DEFAULTURL);
-			}
-		} catch (Exception e) {
-			// Reporter.addScenarioLog("IOException while fetching application url - " + e);
-			LOGGER.error("IOException while fetching application url.", e);
-		}
+		
+		commonFunctions.openUrl();	
 	}
 
 	@When("user gets the title of the page")

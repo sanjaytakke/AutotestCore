@@ -11,7 +11,7 @@ Given user is on Accounts page
 When user gets the title of the page
 Then page title should be "My account - My Store"
 
-@accounts @ETE_1
+@accounts1 @ETE_1
 Scenario: Accounts section count
 Given user is on Accounts page
 Then user gets accounts section

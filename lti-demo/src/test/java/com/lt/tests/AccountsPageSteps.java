@@ -11,10 +11,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.lt.autotest.handlers.AssertHandler;
 import com.lt.autotest.utils.Config;
 import com.lt.base.TestBase;
 import com.lt.containers.AccountPageContainer;
+import com.lt.utilities.CommonFunctions;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
@@ -23,6 +23,7 @@ import io.cucumber.java.en.Then;
 public class AccountsPageSteps extends TestBase {
 
 	private LoginPage loginPage = new LoginPage();
+	public CommonFunctions commonFunctions=new CommonFunctions();
 	public WebDriver driver = getDriver();
 	private AccountPageContainer accountPageContainer = PageFactory.initElements(driver, AccountPageContainer.class);
 	private static final Logger LOGGER = LoggerFactory.getLogger(AccountsPageSteps.class.getName());
@@ -35,7 +36,8 @@ public class AccountsPageSteps extends TestBase {
 		String password = credList.get(0).get("password");
 
 		try {
-			driver.get(Config.getPropertyValue("application.url"));
+		//	driver.get(Config.getPropertyValue("application.url"));
+			commonFunctions.openUrl();
 		} catch (Exception e) {
 			LOGGER.error("AccountsPageSteps : " + e.toString());
 		}
@@ -45,7 +47,7 @@ public class AccountsPageSteps extends TestBase {
 	@Given("user is on Accounts page")
 	public void user_is_on_accounts_page() {
 		String title = driver.getTitle();
-		
+
 		LOGGER.info("Accounts Page title is: " + title);
 	}
 
@@ -67,7 +69,7 @@ public class AccountsPageSteps extends TestBase {
 
 		LOGGER.info("Actual accounts section list: " + actualAccountSectionsList);
 		Assert.assertTrue(expAccountSectionsList.containsAll(actualAccountSectionsList));
-	
+
 	}
 
 	@Then("accounts section count should be {int}")

@@ -14,6 +14,7 @@ import com.lt.autotest.handlers.AssertHandler;
 import com.lt.base.TestBase;
 import com.lt.constants.Constants;
 import com.lt.containers.ContactUsPageContainer;
+import com.lt.utilities.CommonFunctions;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
@@ -22,6 +23,7 @@ import io.cucumber.java.en.When;
 public class ContactUsPageSteps extends TestBase {
 
 	private LoginPage loginPage = new LoginPage();
+	public CommonFunctions commonFunctions=new CommonFunctions();
 	public WebDriver driver = getDriver();
 	private ContactUsPageContainer contactUsPageContainer = PageFactory.initElements(driver,
 			ContactUsPageContainer.class);
