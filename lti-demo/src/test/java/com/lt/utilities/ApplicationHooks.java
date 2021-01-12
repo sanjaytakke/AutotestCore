@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.gson.GsonExtentTypeAdapterBuilder.Builder;
 import com.lt.base.TestBase;
 
 import io.cucumber.java.After;
@@ -38,6 +39,7 @@ public class ApplicationHooks extends TestBase {
 			String screenshotName = scenario.getName().replaceAll(" ", "_");
 			byte[] scourcePath = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(scourcePath, "image/png", screenshotName);
+			
 		}		
 		LOGGER.info("After scenario executed successfully...");
 		getDriver().close();
