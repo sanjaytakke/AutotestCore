@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features", glue = { "com.lt.tests", "com.lt.utilities" }, plugin = {
 		"pretty", "html:target/report.html", "json:target/cucumber.json",
-		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, tags = "@ETE_3", dryRun = false)
+		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, tags = "@ETE_2", dryRun = false)
 // )
 public class TestRunner {
 
