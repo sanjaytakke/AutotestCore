@@ -1,6 +1,6 @@
 Feature: Login page feature
 
-@LoginTitle @ETE_1 @ETE_2
+@LoginTitle @ETE_1 @ETE_4
 Scenario: Login page title
 Given User is on home page
 When user gets the title of the page
