@@ -65,7 +65,7 @@ public class TestBase extends DriverManager {
 
 		WebDriver driver = null;
 		try {
-			driver = new ChromeDriver(options);
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
 		} catch (Exception e) {
 			LOGGER.error(e.toString());
 		}
