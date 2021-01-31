@@ -8,6 +8,7 @@ COPY pom.xml /home/SeleniumTestFramework
 #COPY testing.xml /home/SeleniumTestFramework
 COPY libs2 /home/SeleniumTestFramework/libs2
 #running actual command
+
 RUN mvn -f /home/SeleniumTestFramework/pom.xml clean test -DskipTests=true
 
 ADD target/lti-demo.jar /home/SeleniumTestFramework/lti-demo.jar
